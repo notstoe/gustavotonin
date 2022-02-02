@@ -72,14 +72,14 @@ const GlobalStyles = createGlobalStyle`
 	}
 
 	@media ${until(Device.TabletLarge)} {
-    /* reduce base font size to 15px */
+    /* reduce font size of root element to 15px (i.e -1px)*/
 		html {
 			font-size: 87.5%;
 		}
 	}
 
 	@media ${until(Device.Tablet)} {
-    /* reduce base font size to 14px */
+    /* reduce font size of root element to 14px (i.e -1px)*/
 		html {
 			font-size: 75%;
 		}
@@ -90,7 +90,6 @@ const PageWrapper = styled.main`
 	position: relative;
 
 	width: 100%;
-
 	min-height: 100%;
 
 	font-family: 'Montserrat', sans-serif;
@@ -99,7 +98,14 @@ const PageWrapper = styled.main`
 const ContentWrapper = styled.div`
 	color: ${brand.white};
 
+	/* FIXME - temporary for visualization purposes*/
 	min-height: 90vh;
+
+	padding: 0 4rem;
+	width: 90%;
+	max-width: 78rem;
+
+	margin: 0 auto;
 `;
 
 export const s = {
