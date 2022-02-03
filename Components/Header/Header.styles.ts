@@ -12,8 +12,7 @@ const Header = styled.header`
 	width: 90%;
 	max-width: 86rem;
 
-	height: 10vh;
-	max-height: 80px;
+	height: 4rem;
 
 	padding: 1.5rem 0;
 	margin: 0 auto;
@@ -23,34 +22,13 @@ const Header = styled.header`
 
 	> a {
 		padding-left: 1rem;
-
-		&:before {
-			width: 0;
-		}
 	}
 
 	a {
-		position: relative;
-
-		padding-bottom: 0.2rem;
-
 		transition: color 0.2s;
-
-		&:before {
-			content: '';
-			position: absolute;
-			bottom: 0px;
-			border-bottom: 1px solid ${brand.green_blue};
-
-			transition: width 0.4s cubic-bezier(0.8, 0.11, 0.37, 0.99);
-		}
 
 		&:hover {
 			color: ${brand.black.faded};
-
-			&:before {
-				width: 2rem;
-			}
 		}
 	}
 `;
@@ -68,8 +46,17 @@ const NameWrapper = styled.div`
 	align-items: center;
 	justify-content: flex-start;
 
+	position: relative;
+
+	padding-bottom: 0.2rem;
+
 	a {
 		&:before {
+			content: '';
+			position: absolute;
+			bottom: 0px;
+			border-bottom: 1px solid ${brand.green_blue};
+
 			width: 2rem;
 		}
 	}
