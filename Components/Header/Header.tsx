@@ -8,9 +8,11 @@ export default function Header() {
 			</s.NameWrapper>
 
 			<a href='https://github.com/notstoe'>Projects</a>
+			{/*
+			ABOUT section on version 2.0 of the portfolio
 			<s.Separator>|</s.Separator>
 
-			<a href='https://github.com/notstoe'>About</a>
+			<a href='https://github.com/notstoe'>About</a> */}
 			<s.Separator>|</s.Separator>
 
 			<a href='mailto:gstonin95@gmail.com'>Contact</a>
