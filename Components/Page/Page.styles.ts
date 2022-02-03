@@ -72,14 +72,14 @@ const GlobalStyles = createGlobalStyle`
 	}
 
 	@media ${until(Device.TabletLarge)} {
-    /* reduce font size of root element to 15px (i.e -1px)*/
+    /* reduce font size of root element to 14px*/
 		html {
 			font-size: 87.5%;
 		}
 	}
 
 	@media ${until(Device.Tablet)} {
-    /* reduce font size of root element to 14px (i.e -1px)*/
+    /* reduce font size of root element to 12px*/
 		html {
 			font-size: 75%;
 		}
@@ -89,23 +89,22 @@ const GlobalStyles = createGlobalStyle`
 const PageWrapper = styled.main`
 	position: relative;
 
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 	width: 100%;
-	min-height: 100%;
+	min-height: 100vh;
 
 	font-family: 'Montserrat', sans-serif;
 `;
 
 const ContentWrapper = styled.div`
+	flex: 1;
+
 	color: ${brand.white};
 
-	/* FIXME - temporary for visualization purposes*/
-	min-height: 90vh;
-
-	padding: 0 4rem;
 	width: 90%;
-	max-width: 78rem;
-
-	margin: 0 auto;
+	max-width: 75rem;
 `;
 
 export const s = {
