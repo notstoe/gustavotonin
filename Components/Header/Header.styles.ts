@@ -7,15 +7,22 @@ const Header = styled.header`
 
 	display: flex;
 	justify-content: center;
+	align-items: center;
+
+	width: 90%;
+	max-width: 86rem;
 
 	height: 10vh;
 	max-height: 80px;
-	padding: 1.5rem 3rem;
+
+	padding: 1.5rem 0;
+	margin: 0 auto;
 
 	color: ${brand.white};
+	font-size: 0.95rem;
 
 	> a {
-		padding: 0 1rem;
+		padding-left: 1rem;
 
 		&:before {
 			width: 0;
@@ -24,6 +31,8 @@ const Header = styled.header`
 
 	a {
 		position: relative;
+
+		padding-bottom: 0.2rem;
 
 		transition: color 0.2s;
 
@@ -48,6 +57,8 @@ const Header = styled.header`
 
 const Separator = styled.span`
 	color: ${brand.green_blue};
+
+	padding-left: 1rem;
 `;
 
 const NameWrapper = styled.div`
@@ -58,8 +69,6 @@ const NameWrapper = styled.div`
 	justify-content: flex-start;
 
 	a {
-		padding-bottom: 0.3rem;
-
 		&:before {
 			width: 2rem;
 		}
