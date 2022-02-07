@@ -1,6 +1,8 @@
 import { brand } from '@helpers/brand';
 import styled from 'styled-components';
 
+export const headerHeight: string = '4rem';
+
 const Header = styled.header`
 	position: sticky;
 	top: 0;
@@ -11,8 +13,7 @@ const Header = styled.header`
 
 	width: 90%;
 	max-width: 86rem;
-
-	height: 4rem;
+	height: ${headerHeight};
 
 	padding: 1.5rem 0;
 	margin: 0 auto;
