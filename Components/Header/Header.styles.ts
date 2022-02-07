@@ -20,16 +20,35 @@ const Header = styled.header`
 
 	color: ${brand.white};
 	font-size: 0.95rem;
+`;
 
-	> a {
-		padding-left: 1rem;
+const HeaderLinks = styled.a<{ textContent: string }>`
+	position: relative;
+
+	padding-left: 1rem;
+
+	overflow: hidden;
+
+	span {
+		display: inline-block;
+		transition: transform 0.4s;
+
+		&::before {
+			content: '${({ textContent }) => textContent}';
+
+			position: absolute;
+			bottom: 25px;
+			right: 0;
+		}
 	}
 
-	a {
-		transition: color 0.2s;
+	&:hover {
+		span {
+			transform: translateY(25px);
+		}
 
-		&:hover {
-			color: ${brand.black.faded};
+		&::before {
+			transform: translateY(25px);
 		}
 	}
 `;
@@ -40,7 +59,7 @@ const Separator = styled.span`
 	padding-left: 1rem;
 `;
 
-const NameWrapper = styled.div`
+const NameWrapper = styled.div<{ textContent: string }>`
 	flex: 1;
 
 	display: flex;
@@ -49,17 +68,47 @@ const NameWrapper = styled.div`
 
 	position: relative;
 
-	padding-bottom: 0.2rem;
+	padding-bottom: 0.4rem;
+
+	&:before {
+		content: '';
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		border-bottom: 1px solid ${brand.green_blue};
+
+		width: 2rem;
+	}
 
 	a {
-		&:before {
-			content: '';
-			position: absolute;
-			bottom: 0px;
-			border-bottom: 1px solid ${brand.green_blue};
+		display: inline-block;
+		transition: transform 0.4s;
+		overflow: hidden;
 
-			width: 2rem;
+		position: relative;
+
+		span {
+			display: inline-block;
+			transition: transform 0.4s;
+
+			&::after {
+				content: '${({ textContent }) => textContent}';
+
+				position: absolute;
+				bottom: 25px;
+				left: 0;
+			}
+		}
+
+		&:hover {
+			span {
+				transform: translateY(25px);
+			}
+
+			&::before {
+				transform: translateY(25px);
+			}
 		}
 	}
 `;
-export const s = { Header, Separator, NameWrapper };
+export const s = { Header, HeaderLinks, Separator, NameWrapper };

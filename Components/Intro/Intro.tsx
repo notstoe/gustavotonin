@@ -48,15 +48,27 @@ export default function Intro() {
 				</s.CirclesWrapper>
 			</s.IntroInnerContent>
 			<s.Footer>
-				<a target='_blank' href='https://github.com/notstoe'>
-					Github
-				</a>
-				<a target='_blank' href='https://www.instagram.com/notstoe/'>
-					Instagram
-				</a>
-				<a target='_blank' href='https://www.linkedin.com/in/gustavo-s-tonin/'>
-					Linkedin
-				</a>
+				<s.FooterLinks
+					target='_blank'
+					href='https://github.com/notstoe'
+					textContent='Github'
+				>
+					<span>Github</span>
+				</s.FooterLinks>
+				<s.FooterLinks
+					target='_blank'
+					href='https://www.instagram.com/notstoe/'
+					textContent='Instagram'
+				>
+					<span>Instagram</span>
+				</s.FooterLinks>
+				<s.FooterLinks
+					target='_blank'
+					href='https://www.linkedin.com/in/gustavo-s-tonin/'
+					textContent='Linkedin'
+				>
+					<span>Linkedin</span>
+				</s.FooterLinks>
 			</s.Footer>
 		</s.IntroWrapper>
 	);

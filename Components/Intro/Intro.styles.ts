@@ -241,16 +241,37 @@ const Footer = styled.footer`
 
 	margin-top: 5rem;
 
-	a {
-		transition: color 0.2s;
+	@media ${until(Device.TabletLarge)} {
+		align-self: center;
+	}
+`;
 
-		&:hover {
-			color: ${brand.black.faded};
+const FooterLinks = styled.a<{ textContent: string }>`
+	position: relative;
+
+	overflow: hidden;
+
+	span {
+		display: inline-block;
+		transition: transform 0.4s;
+
+		&::before {
+			content: '${({ textContent }) => textContent}';
+
+			position: absolute;
+			bottom: 25px;
+			right: 0;
 		}
 	}
 
-	@media ${until(Device.TabletLarge)} {
-		align-self: center;
+	&:hover {
+		span {
+			transform: translateY(25px);
+		}
+
+		&::before {
+			transform: translateY(25px);
+		}
 	}
 `;
 
@@ -267,4 +288,5 @@ export const s = {
 	ImageWrapper,
 	Footer,
 	IntroInnerContent,
+	FooterLinks,
 };
