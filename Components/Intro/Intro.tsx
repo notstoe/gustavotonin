@@ -9,8 +9,21 @@ export default function Intro() {
 		<s.IntroWrapper>
 			<s.IntroInnerContent>
 				<s.IntroTextWrapper>
-					<span>Hello.</span>
-					<span>I am</span>
+					<div>
+						<s.Text
+							target='_blank'
+							href='https://github.com/notstoe'
+							content='Hello.'
+							hoverContent='projects'
+						/>
+					</div>
+					<div>
+						<s.Text
+							href='mailto:gstonin95@gmail.com'
+							content='I am'
+							hoverContent='contact'
+						/>
+					</div>
 					<s.Name>
 						<s.SvgGus>
 							<Gustavo />
@@ -24,20 +37,26 @@ export default function Intro() {
 					<s.GreenBlueCircle />
 					<s.RedCircle />
 					<div className='circleImageTrim'>
-						<div className='imageWrap'>
+						<s.ImageWrapper>
 							<Image
 								src='https://res.cloudinary.com/dowa8tjdi/image/upload/v1643912840/profile_a9f0xu.jpg'
 								layout='fill'
 								objectFit='contain'
 							/>
-						</div>
+						</s.ImageWrapper>
 					</div>
 				</s.CirclesWrapper>
 			</s.IntroInnerContent>
 			<s.Footer>
-				<a href='https://github.com/notstoe'>Github</a>
-				<a href='https://www.instagram.com/notstoe/'>Instagram</a>
-				<a href='https://www.linkedin.com/in/gustavo-s-tonin/'>Linkedin</a>
+				<a target='_blank' href='https://github.com/notstoe'>
+					Github
+				</a>
+				<a target='_blank' href='https://www.instagram.com/notstoe/'>
+					Instagram
+				</a>
+				<a target='_blank' href='https://www.linkedin.com/in/gustavo-s-tonin/'>
+					Linkedin
+				</a>
 			</s.Footer>
 		</s.IntroWrapper>
 	);

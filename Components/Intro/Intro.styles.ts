@@ -1,7 +1,9 @@
 import { brand } from '@helpers/brand';
 import { Device, until } from '@helpers/media';
 
-import styled from 'styled-components';
+import { headerHeight } from '../Header/Header.styles';
+
+import styled, { keyframes } from 'styled-components';
 
 const IntroWrapper = styled.section`
 	display: flex;
@@ -9,7 +11,7 @@ const IntroWrapper = styled.section`
 	flex-direction: column;
 
 	/* everything in the viewport height minus the header height */
-	height: calc(100vh - 4rem);
+	height: calc(100vh - ${headerHeight});
 
 	@media ${until(Device.TabletLarge)} {
 		padding-top: 2.5rem;
@@ -37,8 +39,33 @@ const IntroInnerContent = styled.div`
 	}
 `;
 
+const IntroTextWrapper = styled.h1`
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+`;
+
+const Text = styled.a<{ content: string; hoverContent: string }>`
+	&::before {
+		content: '${({ content }) => content}';
+
+		transition: padding 0.4s;
+
+		cursor: pointer;
+	}
+
+	&:hover {
+		&:before {
+			content: '${({ hoverContent }) => hoverContent}';
+			padding-left: 20px;
+		}
+	}
+`;
+
 const CirclesWrapper = styled.div`
 	position: relative;
+
+	cursor: pointer;
 
 	.circleImageTrim {
 		overflow: hidden;
@@ -47,24 +74,44 @@ const CirclesWrapper = styled.div`
 		height: 25rem;
 		border-radius: 50%;
 
-		.imageWrap {
-			position: relative;
-
-			width: 25rem;
-			height: 40rem;
-
-			transform: translateY(-11.5rem);
-		}
-
 		@media ${until(Device.TabletLarge)} {
 			width: 20rem;
 			height: 20rem;
-
-			.imageWrap {
-				width: 20rem;
-				height: 40rem;
-			}
 		}
+	}
+
+	&:hover {
+		${() => GreenBlueCircle} {
+			transform: translate(40px, -40px);
+			filter: blur(8px);
+		}
+		${() => RedCircle} {
+			transform: translate(-40px, 40px);
+			filter: blur(8px);
+		}
+	}
+
+	&:active {
+		cursor: default;
+
+		${() => GreenBlueCircle}, ${() => RedCircle} {
+			filter: blur(5px);
+			transform: translate(0);
+		}
+	}
+`;
+
+const ImageWrapper = styled.div`
+	position: relative;
+
+	width: 25rem;
+	height: 40rem;
+
+	transform: translateY(-11.5rem);
+
+	@media ${until(Device.TabletLarge)} {
+		width: 20rem;
+		height: 40rem;
 	}
 `;
 
@@ -78,6 +125,8 @@ const RedCircle = styled.div`
 	width: 25rem;
 	height: 25rem;
 	border-radius: 50%;
+
+	transition: transform 0.4s, filter 0.2s;
 
 	@media ${until(Device.TabletLarge)} {
 		width: 20rem;
@@ -96,16 +145,12 @@ const GreenBlueCircle = styled.div`
 	height: 25rem;
 	border-radius: 50%;
 
+	transition: transform 0.4s, filter 0.4s;
+
 	@media ${until(Device.TabletLarge)} {
 		width: 20rem;
 		height: 20rem;
 	}
-`;
-
-const IntroTextWrapper = styled.h1`
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
 `;
 
 const Name = styled.span`
@@ -117,12 +162,41 @@ const Name = styled.span`
 	margin-top: 1.2rem;
 	padding-bottom: 0.3rem;
 
+	cursor: pointer;
+
 	&:before {
 		content: '';
 		position: absolute;
 		bottom: 0;
 		width: 100%;
 		border-bottom: 3px solid ${brand.white};
+
+		transition: width 1s;
+	}
+
+	&:after {
+		content: '';
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		width: 0%;
+		border-bottom: 3px solid ${brand.white};
+
+		transition: width 1s;
+	}
+
+	&:hover {
+		&:before {
+			width: 0%;
+		}
+	}
+
+	&:active {
+		cursor: default;
+
+		&:after {
+			width: 100%;
+		}
 	}
 
 	@media ${until(Device.TabletLarge)} {
@@ -186,9 +260,11 @@ export const s = {
 	RedCircle,
 	GreenBlueCircle,
 	IntroTextWrapper,
+	Text,
 	Name,
 	SvgGus,
 	SvgTonin,
+	ImageWrapper,
 	Footer,
 	IntroInnerContent,
 };
