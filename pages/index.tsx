@@ -8,7 +8,7 @@ const Home: NextPage = () => {
 		description:
 			"Showcase of Gustavo's Tonin work and personal info | React Developer",
 		imageUrl:
-			'https://res.cloudinary.com/dowa8tjdi/image/upload/v1644349758/homepagePic_jtawri.jpg',
+			'https://res.cloudinary.com/dowa8tjdi/image/upload/v1644351028/homepagePic_aitwuo.jpg',
 		websiteUrl: 'https://gustavotonin.vercel.app/',
 		// TODO - update to custom URL later
 	};
