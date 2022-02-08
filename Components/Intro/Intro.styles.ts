@@ -39,7 +39,7 @@ const IntroInnerContent = styled.div`
 	}
 `;
 
-const IntroTextWrapper = styled.h1`
+const IntroTextWrapper = styled.div`
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -153,7 +153,7 @@ const GreenBlueCircle = styled.div`
 	}
 `;
 
-const Name = styled.span`
+const Name = styled.h1`
 	position: relative;
 
 	display: flex;

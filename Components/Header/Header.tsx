@@ -4,14 +4,14 @@ export default function Header() {
 	return (
 		<s.Header>
 			<s.NameWrapper textContent='Gustavo Tonin'>
-				<a target='_blank' href='https://github.com/notstoe'>
+				<a target='_blank' href='https://www.github.com/notstoe'>
 					<span>Gustavo Tonin</span>
 				</a>
 			</s.NameWrapper>
 
 			<s.HeaderLinks
 				target='_blank'
-				href='https://github.com/notstoe'
+				href='https://www.github.com/notstoe'
 				textContent='Projects'
 			>
 				<span>Projects</span>

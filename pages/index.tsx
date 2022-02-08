@@ -4,8 +4,9 @@ import type { NextPage } from 'next';
 
 const Home: NextPage = () => {
 	const seoInfo: SeoProps = {
-		title: 'Gustavo Tonin',
-		description: "Gustavo Tonin's Portfolio",
+		title: 'Gustavo Tonin | Portfolio',
+		description:
+			"Showcase of Gustavo's Tonin work and personal info | React Developer",
 		imageUrl:
 			'https://res.cloudinary.com/dowa8tjdi/image/upload/v1644349758/homepagePic_jtawri.jpg',
 		websiteUrl: 'https://gustavotonin.vercel.app/',

@@ -9,21 +9,21 @@ export default function Intro() {
 		<s.IntroWrapper>
 			<s.IntroInnerContent>
 				<s.IntroTextWrapper>
-					<div>
+					<h2>
 						<s.Text
 							target='_blank'
-							href='https://github.com/notstoe'
+							href='https://www.github.com/notstoe'
 							content='Hello.'
 							hoverContent='projects'
 						/>
-					</div>
-					<div>
+					</h2>
+					<h2>
 						<s.Text
 							href='mailto:gstonin95@gmail.com'
 							content='I am'
 							hoverContent='contact'
 						/>
-					</div>
+					</h2>
 					<s.Name>
 						<s.SvgGus>
 							<Gustavo />
@@ -50,7 +50,7 @@ export default function Intro() {
 			<s.Footer>
 				<s.FooterLinks
 					target='_blank'
-					href='https://github.com/notstoe'
+					href='https://www.github.com/notstoe'
 					textContent='Github'
 				>
 					<span>Github</span>
