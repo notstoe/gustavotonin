@@ -6,6 +6,8 @@ const Home: NextPage = () => {
 	const seoInfo: SeoProps = {
 		title: 'Gustavo Tonin',
 		description: "Gustavo Tonin's Portfolio",
+		imageUrl:
+			'https://res.cloudinary.com/dowa8tjdi/image/upload/v1644349758/homepagePic_jtawri.jpg',
 		websiteUrl: 'https://gustavotonin.vercel.app/',
 		// TODO - update to custom URL later
 	};
@@ -15,6 +17,7 @@ const Home: NextPage = () => {
 			<SeoHead
 				title={seoInfo.title}
 				description={seoInfo.description}
+				imageUrl={seoInfo.imageUrl}
 				websiteUrl={seoInfo.websiteUrl}
 			/>
 
