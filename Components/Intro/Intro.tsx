@@ -42,6 +42,9 @@ export default function Intro() {
 								src='https://res.cloudinary.com/dowa8tjdi/image/upload/v1643912840/profile_a9f0xu.jpg'
 								layout='fill'
 								objectFit='contain'
+								priority
+								placeholder='blur'
+								blurDataURL='https://res.cloudinary.com/dowa8tjdi/image/upload/v1644507520/profileBlurred_pbtjtu.jpg'
 							/>
 						</s.ImageWrapper>
 					</div>
