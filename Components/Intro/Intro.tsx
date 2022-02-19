@@ -39,6 +39,7 @@ export default function Intro() {
 					<div className='circleImageTrim'>
 						<s.ImageWrapper>
 							<Image
+								draggable={false}
 								src='https://res.cloudinary.com/dowa8tjdi/image/upload/v1643912840/profile_a9f0xu.jpg'
 								layout='fill'
 								objectFit='contain'
