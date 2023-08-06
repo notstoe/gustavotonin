@@ -89,6 +89,9 @@ const CirclesWrapper = styled.div`
 			transform: translate(-16px, 16px);
 			filter: blur(8px);
 		}
+		${() => ImageWrapper} {
+			animation: ${() => pulseAnimation} 0.8s ease-in-out;
+		}
 	}
 
 	&:active {
@@ -109,12 +112,31 @@ const ImageWrapper = styled.div`
 
 	transform: translateY(-11.5rem);
 
+	#imgNext {
+		object-fit: contain;
+		filter: url(#noise);
+		width: 100%;
+		height: 100%;
+	}
+
 	@media ${until(Device.TabletLarge)} {
 		width: 20rem;
 		height: 40rem;
 	}
 `;
 
+const pulseAnimation = keyframes`
+	from, to {
+		scale: 1;
+	}                                    
+
+	50% {
+		scale: 1.08;
+	}
+
+`;
+
+// TODO - unify these two into one with params
 const RedCircle = styled.div`
 	position: absolute;
 	bottom: 3px;
@@ -127,6 +149,8 @@ const RedCircle = styled.div`
 	border-radius: 50%;
 
 	transition: transform 0.4s, filter 0.2s;
+
+	pointer-events: none;
 
 	@media ${until(Device.TabletLarge)} {
 		width: 20rem;
@@ -146,6 +170,8 @@ const GreenBlueCircle = styled.div`
 	border-radius: 50%;
 
 	transition: transform 0.4s, filter 0.4s;
+
+	pointer-events: none;
 
 	@media ${until(Device.TabletLarge)} {
 		width: 20rem;

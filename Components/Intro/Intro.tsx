@@ -37,8 +37,42 @@ export default function Intro() {
 					<s.GreenBlueCircle />
 					<s.RedCircle />
 					<div className='circleImageTrim'>
-						<s.ImageWrapper>
+						<s.ImageWrapper id='imageWrapper'>
+							<svg>
+								<defs>
+									<filter id='noise'>
+										<feTurbulence
+											baseFrequency='0.7,0.8'
+											seed='0'
+											type='fractalNoise'
+											result='static'
+										>
+											<animate
+												attributeName='seed'
+												values='0;100'
+												dur='600ms'
+												repeatCount='1'
+												begin='imageWrapper.mouseenter'
+											/>
+										</feTurbulence>
+										<feDisplacementMap
+											in='SourceGraphic'
+											in2='static'
+											scale='0'
+										>
+											<animate
+												attributeName='scale'
+												values='0;40;0'
+												dur='600ms'
+												repeatCount='1'
+												begin='imageWrapper.mouseenter'
+											/>
+										</feDisplacementMap>
+									</filter>
+								</defs>
+							</svg>
 							<Image
+								id='imgNext'
 								draggable={false}
 								src='https://res.cloudinary.com/dowa8tjdi/image/upload/v1643912840/profile_a9f0xu.jpg'
 								layout='fill'

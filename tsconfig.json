@@ -18,7 +18,12 @@
 		"paths": {
 			"@helpers/*": ["helpers/*"],
 			"@assets/*": ["assets/*"]
-		}
+		},
+		"plugins": [
+			{
+				"name": "@styled/typescript-styled-plugin"
+			}
+		]
 	},
 	"include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
 	"exclude": ["node_modules"]
