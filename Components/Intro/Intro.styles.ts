@@ -82,11 +82,11 @@ const CirclesWrapper = styled.div`
 
 	&:hover {
 		${() => GreenBlueCircle} {
-			transform: translate(40px, -40px);
+			transform: translate(16px, -16px);
 			filter: blur(8px);
 		}
 		${() => RedCircle} {
-			transform: translate(-40px, 40px);
+			transform: translate(-16px, 16px);
 			filter: blur(8px);
 		}
 	}
@@ -117,7 +117,7 @@ const ImageWrapper = styled.div`
 
 const RedCircle = styled.div`
 	position: absolute;
-	bottom: 5px;
+	bottom: 3px;
 	right: 2px;
 
 	background: ${brand.red};
@@ -137,7 +137,7 @@ const RedCircle = styled.div`
 const GreenBlueCircle = styled.div`
 	position: absolute;
 	top: 1px;
-	right: 6px;
+	right: 4px;
 
 	background: ${brand.green_blue};
 
